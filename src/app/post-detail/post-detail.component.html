@@ -1,0 +1,16 @@
+<div class="container d-flex align-items-center flex-column">
+  <div class="card posts " style="width: 50rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        <strong>{{ post.title }} </strong>
+      </h5>
+      <p class="card-text">
+        {{ post.body }}
+      </p>
+    </div>
+    <h3>Comments:</h3>
+    <p *ngFor="let comment of this.commentArray">
+      {{ comment.body }}
+    </p>
+  </div>
+</div>
