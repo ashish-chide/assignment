@@ -9,7 +9,12 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./post-detail.component.css"]
 })
 export class PostDetailComponent implements OnInit {
-  post: Post;
+  post: Post = {
+    userId: 1,
+    id: 1,
+    title: "This is Title",
+    body: "This is Body of the post"
+  };
   id: number;
   commentArray: Comment;
   constructor(

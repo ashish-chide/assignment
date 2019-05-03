@@ -12,16 +12,18 @@ import { Router } from "@angular/router";
 export class NewPostComponent implements OnInit {
   constructor(private postService: PostService, private router: Router) {}
   post: Post;
+  showPost: Boolean = false;
   ngOnInit() {}
   onSubmit(form: NgForm) {
     this.post = form.value;
-
     this.postService.sendPost(this.post).subscribe(
-      Response => {
+      (Response: Post) => {
         console.log(Response);
-        this.router.navigate(["/posts"]);
+        this.post = Response;
+        // this.router.navigate(["/posts"]);
       },
       error => console.log(error)
     );
+    this.showPost = true;
   }
 }

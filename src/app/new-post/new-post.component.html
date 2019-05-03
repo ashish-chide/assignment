@@ -7,3 +7,16 @@
     <button type="submit">Create New Post</button>
   </div>
 </form>
+
+<div class="container d-flex align-items-center flex-column">
+  <div *ngIf="showPost" class="card posts " style="width: 50rem;">
+    <div class="card-body">
+      <h5 class="card-title">
+        <strong>id:{{ post.id }} {{ post.title }} </strong>
+      </h5>
+      <p class="card-text">
+        {{ post.body }}
+      </p>
+    </div>
+  </div>
+</div>

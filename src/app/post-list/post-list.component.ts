@@ -8,7 +8,14 @@ import { PostService } from "../post.service";
   styleUrls: ["./post-list.component.css"]
 })
 export class PostListComponent implements OnInit {
-  postsArray: Post[] = [];
+  postsArray: Post[] = [
+    {
+      userId: 1,
+      id: 1,
+      title: "This is Title",
+      body: "This is Body of the post"
+    }
+  ];
 
   constructor(private postServices: PostService) {}
 
