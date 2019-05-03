@@ -17,6 +17,7 @@ export class PostDetailComponent implements OnInit {
   };
   id: number;
   commentArray: Comment;
+  isComment: boolean = true;
   constructor(
     private postService: PostService,
     private route: ActivatedRoute
@@ -32,5 +33,9 @@ export class PostDetailComponent implements OnInit {
     this.postService.getComments(this.id).subscribe((Response: any) => {
       this.commentArray = Response.splice(0, 5);
     });
+  }
+
+  showComment() {
+    this.isComment = !this.isComment;
   }
 }

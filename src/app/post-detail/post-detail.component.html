@@ -1,18 +1,19 @@
-<div class="container d-flex align-items-center flex-column">
-  <div class="card posts " style="width: 50rem;">
-    <div class="card-body">
-      <h5 class="card-title">
-        <strong>{{ post.title }} </strong>
-      </h5>
-      <p class="card-text">
-        {{ post.body }}
+<section style="height: 100%;">
+  <div class="container d-flex align-items-center flex-column">
+    <div class="card posts " style="width: 50rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <strong>{{ post.title }} </strong>
+        </h5>
+        <p class="card-text">
+          {{ post.body }}
+        </p>
+      </div>
+      <p (click)="showComment()">
+        <i class="material-icons"> mode_comment </i>comment
       </p>
+      <app-comment [id]="post.id" *ngIf="isComment"></app-comment>
     </div>
-
-    <p><i class="material-icons"> mode_comment </i>comment</p>
-    <p *ngFor="let comment of this.commentArray">
-      {{ comment.body }}
-    </p>
+    <a [routerLink]="['/posts']">Go Back</a>
   </div>
-  <a [routerLink]="['/posts']">Go Back</a>
-</div>
+</section>

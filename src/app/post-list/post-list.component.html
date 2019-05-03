@@ -12,7 +12,11 @@
         <p class="card-text">
           {{ post.body }}
         </p>
-        <p><a [routerLink]="['/edit-post', post.id]">Edit Post</a></p>
+        <p>
+          <a [routerLink]="['/edit-post', post.id]"
+            ><i class="material-icons"> border_color </i></a
+          >
+        </p>
       </div>
     </a>
   </div>

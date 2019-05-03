@@ -1,13 +1,57 @@
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
-  <div>
-    <input type="text" placeholder="userId" ngModel name="userId" />
-    <input type="text" placeholder="Title" ngModel name="title" />
-    <input type="text" placeholder="Body" ngModel name="body" />
-
-    <button type="submit">Create New Post</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 m-4 mx-auto">
+      <div class="card ">
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <h2 class="text-center grey-text py-3">
+              Add Post
+            </h2>
+            <div class="md-form">
+              <i class="fa fa-user prefix grey-text"></i>
+              <input
+                type="text"
+                id="form31"
+                class="form-control"
+                ngModel
+                name="userId"
+              />
+              <label style="margin-top: -24px;">Your Id</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-tag prefix grey-text"></i>
+              <input
+                type="text"
+                id="form321"
+                class="form-control"
+                ngModel
+                name="title"
+              />
+              <label style="margin-top: -24px;">Title</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-pencil prefix grey-text"></i>
+              <textarea
+                type="text"
+                id="form81"
+                class="md-textarea"
+                style="height: 100px"
+                ngModel
+                name="body"
+              ></textarea>
+              <label style="margin-top: -24px;">Message</label>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-outline-black grey-text" type="submit">
+                Post
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-</form>
-
+</div>
 <div class="container d-flex align-items-center flex-column">
   <div *ngIf="showPost" class="card posts " style="width: 50rem;">
     <div class="card-body">

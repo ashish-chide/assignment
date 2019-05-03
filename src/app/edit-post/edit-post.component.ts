@@ -16,7 +16,7 @@ export class EditPostComponent implements OnInit {
     title: "This is Title",
     body: "This is Body of the post"
   };
-  showPost: Boolean = false;
+  showPost: boolean = false;
 
   id: number;
   constructor(

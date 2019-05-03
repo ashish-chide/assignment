@@ -10,6 +10,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { PostService } from "./post.service";
 import { HeaderComponent } from "./header/header.component";
 import { EditPostComponent } from './edit-post/edit-post.component';
+import { CommentComponent } from './post-detail/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EditPostComponent } from './edit-post/edit-post.component';
     PostDetailComponent,
     NewPostComponent,
     HeaderComponent,
-    EditPostComponent
+    EditPostComponent,
+    CommentComponent
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [PostService],
