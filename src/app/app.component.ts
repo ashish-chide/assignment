@@ -8,12 +8,4 @@ import { Post } from "./post";
 })
 export class AppComponent {
   title = "assignment";
-  post: Post;
-  showPost = false;
-
-  onPostClicked(post: Post) {
-    this.post = post;
-    this.showPost = true;
-    console.log(this.post);
-  }
 }

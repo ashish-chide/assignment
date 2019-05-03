@@ -9,20 +9,15 @@ import { PostService } from "../post.service";
 })
 export class PostListComponent implements OnInit {
   postsArray: Post[] = [];
-  @Output() eventClicked = new EventEmitter<Post>();
 
   constructor(private postServices: PostService) {}
 
   ngOnInit() {
-    this.postServices.getPosts().subscribe(
+    this.postServices.getAllPosts().subscribe(
       (Response: Post[]) => {
-        this.postsArray = Response.splice(0, 4);
+        this.postsArray = Response;
       },
       error => console.log(error)
     );
-  }
-
-  onClick(post: Post): void {
-    this.eventClicked.emit(post);
   }
 }

@@ -1,3 +1,9 @@
-<p>
-  new-post works!
-</p>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div>
+    <input type="text" placeholder="userId" ngModel name="userId" />
+    <input type="text" placeholder="Title" ngModel name="title" />
+    <input type="text" placeholder="Body" ngModel name="body" />
+
+    <button type="submit">Create New Post</button>
+  </div>
+</form>

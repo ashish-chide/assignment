@@ -1,8 +1,2 @@
-<app-post-list
-  (eventClicked)="onPostClicked($event)"
-  *ngIf="!showPost"
-></app-post-list>
-
-<app-post-detail [post]="post" *ngIf="showPost"></app-post-detail>
-
-<!-- <router-outlet></router-outlet> -->
+<app-header></app-header>
+<router-outlet></router-outlet>

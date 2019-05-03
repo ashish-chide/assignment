@@ -3,3 +3,8 @@
   padding: 5px;
   margin-top: 15px;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}

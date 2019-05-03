@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div>
+    <input
+      type="text"
+      placeholder="userId"
+      [(ngModel)]="post.userId"
+      name="userId"
+    />
+    <input
+      type="text"
+      placeholder="Title"
+      [(ngModel)]="post.title"
+      name="title"
+    />
+    <input type="text" placeholder="Body" [(ngModel)]="post.body" name="body" />
+
+    <button type="submit">Create New Post</button>
+  </div>
+</form>

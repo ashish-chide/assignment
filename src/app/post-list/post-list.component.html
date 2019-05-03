@@ -3,19 +3,17 @@
     class="card posts "
     style="width: 50rem;"
     *ngFor="let post of postsArray"
-    (click)="onClick(post)"
   >
-    <div class="card-body">
-      <h5 class="card-title">
-        <strong>{{ post.title }} </strong>
-      </h5>
-      <p class="card-text">
-        {{ post.body }}
-      </p>
-    </div>
-    <!-- <h3>Comments:</h3> -->
-    <!-- <p *ngFor="let comment of this.commentArray">
-      {{ comment.body }}
-    </p> -->
+    <a [routerLink]="['/posts', post.id]">
+      <div class="card-body">
+        <h5 class="card-title">
+          <strong>id:{{ post.id }} {{ post.title }} </strong>
+        </h5>
+        <p class="card-text">
+          {{ post.body }}
+        </p>
+        <p><a [routerLink]="['/edit-post', post.id]">Edit Post</a></p>
+      </div>
+    </a>
   </div>
 </div>

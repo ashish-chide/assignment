@@ -1,17 +1,16 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Post } from "../post";
 import { PostService } from "../post.service";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: "app-post-detail",
-  templateUrl: "./post-detail.component.html",
-  styleUrls: ["./post-detail.component.css"]
+  selector: "app-edit-post",
+  templateUrl: "./edit-post.component.html",
+  styleUrls: ["./edit-post.component.css"]
 })
-export class PostDetailComponent implements OnInit {
+export class EditPostComponent implements OnInit {
   post: Post;
   id: number;
-  commentArray: Comment;
   constructor(
     private postService: PostService,
     private route: ActivatedRoute
@@ -24,8 +23,11 @@ export class PostDetailComponent implements OnInit {
     this.postService.getPost(this.id).subscribe((Response: any) => {
       this.post = Response;
     });
-    this.postService.getComments(this.id).subscribe((Response: any) => {
-      this.commentArray = Response.splice(0, 5);
+  }
+
+  onSubmit(post: Post) {
+    this.postService.editPost(post).subscribe((Response: any) => {
+      this.post = Response;
     });
   }
 }
