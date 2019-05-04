@@ -30,16 +30,16 @@ export class EditPostComponent implements OnInit {
     });
     this.postService.getPost(this.id).subscribe((Response: any) => {
       this.post = Response;
-      console.log(this.post);
     });
   }
 
   onSubmit(post: NgForm) {
-    console.log(post.value);
     this.post = post.value;
+    console.log(post.value);
     this.postService.editPost(this.post).subscribe(
       (Response: any) => {
         this.post = Response;
+        console.log("[Response]");
         console.log(Response);
       },
       error => console.log(error)

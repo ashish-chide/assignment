@@ -1,0 +1,32 @@
+p{
+  font-size: 14px;
+  margin-left: 10px;
+  text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
+}
+
+.line-border {
+  /*border-bottom: 2px solid #000;*/
+  padding-bottom: 27px;
+}
+.comment {
+  width: 100%;
+}
+
+.email {
+    float: right;
+    margin-top: -36px;
+    color: black;
+    border-radius: 7px;
+    margin-left: 20px;
+    padding-right: 5px;
+}
+.email-badge {
+  display:inline-block;
+  font-weight: bold;
+}
+
+.custom-i {
+  position: absolute;
+  margin-left: -19px;
+}

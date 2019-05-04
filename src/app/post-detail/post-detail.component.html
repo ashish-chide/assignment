@@ -1,19 +1,28 @@
-<section style="height: 100%;">
+<section class="fade-in-post" style="height: 100%;">
   <div class="container d-flex align-items-center flex-column">
-    <div class="card posts " style="width: 50rem;">
+    <div class="card posts " style="width: 72rem;">
       <div class="card-body">
-        <h5 class="card-title">
+        <a routerLink="/posts" class="mb-4">
+          <i class="material-icons back">arrow_back_ios arrow_back_ios arrow_back_ios</i>
+        </a>
+        <h3 class="card-title">
           <strong>{{ post.title }} </strong>
-        </h5>
-        <p class="card-text">
+        </h3>
+        <h5 class="card-text">
           {{ post.body }}
-        </p>
+        </h5>
       </div>
-      <p (click)="showComment()">
-        <i class="material-icons"> mode_comment </i>comment
-      </p>
+      <ul>
+        <li class="control">
+          <i (click)="showComment()" class="material-icons custom">
+            mode_comment
+          </i>
+          <p style="font-size:40px; display:inline-block;margin-top:-5px">
+            Comments
+          </p>
+        </li>
+      </ul>
       <app-comment [id]="post.id" *ngIf="isComment"></app-comment>
     </div>
-    <a [routerLink]="['/posts']">Go Back</a>
   </div>
 </section>

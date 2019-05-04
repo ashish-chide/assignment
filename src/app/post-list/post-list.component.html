@@ -1,23 +1,35 @@
-<div class="container d-flex align-items-center flex-column">
-  <div
-    class="card posts "
-    style="width: 50rem;"
-    *ngFor="let post of postsArray"
-  >
-    <a [routerLink]="['/posts', post.id]">
-      <div class="card-body">
-        <h5 class="card-title">
-          <strong>id:{{ post.id }} {{ post.title }} </strong>
-        </h5>
-        <p class="card-text">
-          {{ post.body }}
-        </p>
-        <p>
-          <a [routerLink]="['/edit-post', post.id]"
-            ><i class="material-icons"> border_color </i></a
-          >
-        </p>
-      </div>
-    </a>
+<section classs="fade-in-post">
+  <pagination-controls
+    class="m-2 p-1 d-flex flex-wrap justify-content-center"
+    (pageChange)="page = $event"
+  ></pagination-controls>
+  <div class="container d-flex flex-wrap justify-content-center">
+    <div
+      class="card posts mb-3"
+      *ngFor="
+        let post of postsArray
+          | paginate: { itemsPerPage: 10, currentPage: page }
+      "
+    >
+      <a [routerLink]="['/posts', post.id]">
+        <div class="card-body">
+          <h3 class="card-title">
+            <strong>{{ post.title }} </strong>
+          </h3>
+          <h5 class="card-text">
+            {{ post.body }}
+          </h5>
+        </div>
+        <div>
+          <ul>
+            <li class="control">
+              <a [routerLink]="['/edit-post', post.id]"
+                ><i class="material-icons m-2 "> border_color </i></a
+              >
+            </li>
+          </ul>
+        </div>
+      </a>
+    </div>
   </div>
-</div>
+</section>

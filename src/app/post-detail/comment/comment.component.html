@@ -1,3 +1,12 @@
-<p *ngFor="let comment of commentArray">
-  {{ comment.body }}
-</p>
+<div class="comment">
+  <div *ngFor="let comment of commentArray">
+    <p style="color: teal;font-weight: bold;">Name:  {{ comment.name }}</p>
+    <div class=" email">
+    	<i class="material-icons custom-i">email</i>
+    	<p class="email-badge">
+    		{{ comment.email }}
+    	</p>
+    </div>
+    <p class="line-border">{{ comment.body }}</p>
+  </div>
+</div>
