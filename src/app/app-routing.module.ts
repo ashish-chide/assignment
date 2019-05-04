@@ -5,7 +5,7 @@ import { PostDetailComponent } from "./post-detail/post-detail.component";
 import { AppComponent } from "./app.component";
 import { NewPostComponent } from "./new-post/new-post.component";
 import { EditPostComponent } from "./edit-post/edit-post.component";
-
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component'
 const routes: Routes = [
   { path: "", redirectTo: "/posts", pathMatch: "full" },
   {
@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: "edit-post/:id",
     component: EditPostComponent
+  },
+   {
+    path: "**",
+    component: PageNotFoundComponent
   }
 ];
 @NgModule({

@@ -13,6 +13,7 @@ import { PostService } from "./post.service";
 import { HeaderComponent } from "./header/header.component";
 import { EditPostComponent } from './edit-post/edit-post.component';
 import { CommentComponent } from './post-detail/comment/comment.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CommentComponent } from './post-detail/comment/comment.component';
     NewPostComponent,
     HeaderComponent,
     EditPostComponent,
-    CommentComponent
+    CommentComponent,
+    PageNotFoundComponent
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule,NgxPaginationModule],
   providers: [PostService],
